@@ -22,11 +22,11 @@ and the following window will appear
 
 ![RemoteDesktop](.bckup/Images/Workshop/Atom_blank.png)
 
-There several options to adjust the appearance of the Editor window. As we have discussed, Atom editor is famous for its ability to be tailored to user's requirement. To do that, follow the given steps. Click on the 'Edit' button in the menu bar and navigate to preferences
+There are several options to adjust the appearance of the editor's window. Atom editor is famous for its ability to be tailored to user's requirement. To do that, follow the given steps. Click on the 'Edit' button in the menu bar and navigate to 'preferences'
 
 ![(https://linuxhint.com/wp-content/uploads/2020/03/6-42.png)](https://linuxhint.com/wp-content/uploads/2020/03/6-42.png)
 
-Click on 'Preferences', you'd see the following screen.
+and you will see the following screen
 
 ![(https://linuxhint.com/wp-content/uploads/2020/03/7-42.png)](https://linuxhint.com/wp-content/uploads/2020/03/7-42.png)
 
@@ -40,7 +40,7 @@ and also for the code syntax field.
 
 #### install Platformio-ide-terminal
 
-As a very first step we are going to install the ESSENTIAL Platformio-ide-terminal pacakge, which adds a fully functioning terminal to your ATOM editor.
+As a very first step, we are going to install the ESSENTIAL `Platformio-ide-terminal` pacakge, which adds a fully functioning terminal to your ATOM editor.
 
 Go to your terminal and type
 
@@ -83,24 +83,26 @@ cd
 git clone https://github.com/nhmvienna/MysteriousAbominableYeti
 ```
 
-Now, you have imported the data from this repository to your home directory.
+Now, you have imported all data from the 'MysteriousAbominableYeti' repository to your home directory.
 
 ### (d) Select project folders
 
-By clicking `File > Add Project folder...` or by using the shortcut **'Ctrl'+'Shift'+'A'** you can now select the newly downloaded Folder "MysteriousAbominableYeti" as your project folder.
+By clicking `File > Add Project folder...` or by using the shortcut **'Ctrl'+'Shift'+'A'** you can now select the newly downloaded folder "MysteriousAbominableYeti" as your project folder.
 
 ![(PF1)](.bckup/Images/Workshop/Atom_ProjectFolder.png)
 
 ![(PF2)](.bckup/Images/Workshop/Atom_ProjectFolder2.png)
 
-Once the Project folder is loaded, it will appear in the left pane of the window and will show the full hierachry within the folder.
+Once the Project folder is loaded, it will appear in the left pane of the window.
 
 ![(PF3)](.bckup/Images/Workshop/Atom_ProjectFolder3.png)
 
 ### (e) Start the bioinformatic analyses
 
-In Atom, open the document main.sh in the folder shell/ and follow the instructions.
+In Atom, open the document 'main.sh' located in the folder shell/ and follow the instructions.
 
 You may need to adjust the wrapping of the text to improve the readibility. This can be done as follows
 
 ![(PF3)](.bckup/Images/Workshop/Atom_Softwrap.png)
+
+## Happy exploring
