@@ -105,4 +105,15 @@ You may need to adjust the wrapping of the text to improve the readibility. This
 
 ![(PF3)](.bckup/Images/Workshop/Atom_Softwrap.png)
 
+### (f) Moving files from the server to your Windows computer
+
+If you want to migrate files from your personal computer to the server, you can use the `scp` command in the powershell of your Windows computer. You will need to know the path to the destination on the server where you want to copy your files from.
+
+Note that the adress of the server address must contain (1) the username followed by an `@` symbol, (2) the name or IP address of the remote machine, followed by a colon `:` and (3) the full path to the file that should be copied.
+
+```bash
+# copy the file TestFileToMoveAround.txt from the Desktop of the remote machine to the H:\ drive on your Windows machine
+scp <username>@<IP>:~/Desktop/TestFileToMoveAround.txt H:\
+```
+
 ## Happy exploring
