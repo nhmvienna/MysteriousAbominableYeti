@@ -1,3 +1,32 @@
+
+####################### Phyloserver Turtorial ############################
+
+# MMMMMMMMMMMMMMMMMMMMWX0kocldkxooookNMMMMMMMMMMMMMM
+# MMMMMMMMMMMMMMMMMMWW0:;:clkXXKKX0xclXMMMMMMMMMMMMM
+# MMMMMMMMMMMMMMMWNKOxc:odxxOOkOKK0Kx;xMMMMMMMMMMMMM
+# MMMMMMMMMMMMMMKoldddxk0K0Okoldkxlo:,OMMMMMMMMMMMMM
+# MMMMMMMMMMMMNkclO00000KKOOkkxddllo;:KMMMMMMMMMMMMM
+# MMMMMMMMMWNOc:oKX0OOO00kookKOolodc,oXMMMMMMMMMMMMM
+# MMMMMMMMWKo;cxKXXXXK000OOkOKKkkO0OcoXMMMMMMMMMMMMM
+# MMMMMMMWO;;oxOKKKXNX0O000KKK00O0XXk:oNMMMMMMMMMMMM
+# MMMMMMWKc,oxOK000Okxd0X000000OOO0KKkooONMMMMMMMMMM
+# MMMMMMKc:dxOXNXKkdddkXNXKK00XKkdx0KKKkookNWMMMMMMM
+# MMMMMMk;lx0XKKK00X00NWX0OOO0KkloxdkKKKKOclKWMMMMMM
+# MMMMMMx,lk0K0000XWNNNXK0000Oo;;:codxkOOKOlcOWMMMMM
+# MMMMMMk,cxOK00OkXNNNNXK00KOc:kXOo:;:cloxOKxckWMMMM
+# MMMMNkc':dOKKOddkKXNWWNX00OdcoKWWXkdc,;lodkc:0MMMM
+# MMMMO;;cclOKKd;lxxxk0XNWX0000dcOMMMMNl'ldodd;xMMMM
+# MMMWd,cddldOd;.;ooodxxk0XNNK0KlcXMMMM0l;:;:ccOMMMM
+# MMMWO::oxdc;:c,,odoooodd0WWN0Kd:0MMMMMNKK0kOXWMMMM
+# MMMMWKo:llll:;cdxxOOOolxKWWNK0c:0MMMMMMMMMMMMMMMMM
+# MMMMWWWXKX0c;odxOKX0d:lOXWWNX0:lNMMMMMMMMMMMMMMMMM
+# MMMMMMMMXd:cxO00K0x:';xKWMWX0k:xMMMMMMMMMMMMMMMMMM
+# MMMMMMMXl;ox0XK0x:cxc,dKWWNKOl,kMMMMMMMMMMMMMMMMMM
+# MMMMMMMK:,odxO0KOococ;o0NNX0OocodOKXWMMMMMMMMMMMMM
+# MMMMMMMW0o::cldkkxc,,cokKNX0OO0klcoclKMMMMMMMMMMMM
+# MMMMMMMMMWKkdoooolcllc;;clloolllccl:c0MMMMMMMMMMMM
+# MMMMMMMMMMMMMMWWNKXWMXkoc;;,'',,;clxXWWMMMMMMMMMMM
+
 ##### In this excercise, we will reconstruct a phylogeny of 12s rRNA sequences of a diverse set of 14 mammalian samples and include the unknown DNA sample from Nepal
 
 # In the previous excercise, you have downloaded the Git Repository "MysteriousAbominableYeti" to your home directory. Let's first explore what we can find in this Repository.
@@ -209,3 +238,5 @@ echo '''
 ## Now we can finally execute the R script using the Rscript command.
 
 Rscript ~/MysteriousAbominableYeti/scripts/Yeti_phylogeny.r
+
+## now that we have a faint idea, it is time to do some background research and read some papers: http://previouslife.lanevol.org/LANE/yeti.html
