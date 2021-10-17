@@ -255,7 +255,7 @@ Rscript ~/MysteriousAbominableYeti/scripts/Yeti_phylogeny.r
 
 mkdir ~/MysteriousAbominableYeti/results/BLAST
 
-# now, we need to make a new Shellscript for OpenPBS. Do you already manage to create one on your own? Use the text parts from above as a template. Check out https://github.com/nhmvienna/FirstSteps/blob/main/Bioinformatics/SoftwareList.md for the code to activate BLAST in your shell script. Below is a command for a blastn search against the local copy of the nt database at /media/scratch/NCBI_nt_DB_210714/, which will only retain hist with an e-value <= 1e-100 and print out the results in tabular format. If you do not manage, you can find the solution in line 400 :-)
+# now, we need to make a new Shellscript for OpenPBS. Do you already manage to create one on your own? Use the text parts from above as a template. Check out https://github.com/nhmvienna/FirstSteps/blob/main/Bioinformatics/SoftwareList.md for the code to activate BLAST in your shell script. Below is a command for a blastn search against the local copy of the nt database at /media/scratch/NCBI_nt_DB_210714/, which will only retain hits with an e-value <= 1e-100 and print out the results in tabular format. If you do not manage, you can find the solution in line 400 :-)
 
 # blastn \
   # -num_threads 20 \
