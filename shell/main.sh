@@ -262,8 +262,8 @@ mkdir ~/MysteriousAbominableYeti/results/BLAST
   # -evalue 1e-100 \
   # -outfmt "6 qseqid sseqid scomnames slen qlen pident length mismatch gapopen qstart qend sstart send evalue bitscore" \
   # -db /media/scratch/NCBI_nt_DB_210714/nt \
-  # ~/MysteriousAbominableYeti/data/Nepal_hair_12s.fa \
-  # ~/MysteriousAbominableYeti/results/BLAST/Yeti_blastn.txt
+  # -query ~/MysteriousAbominableYeti/data/Nepal_hair_12s.fa \
+  # > ~/MysteriousAbominableYeti/results/BLAST/Yeti_blastn.txt
 
 
 
@@ -424,8 +424,8 @@ echo '''
       -evalue 1e-100 \
       -outfmt "6 qseqid sseqid scomnames slen qlen pident length mismatch gapopen qstart qend sstart send evalue bitscore" \
       -db /media/scratch/NCBI_nt_DB_210714/nt \
-      ~/MysteriousAbominableYeti/data/Nepal_hair_12s.fa \
-      ~/MysteriousAbominableYeti/results/BLAST/Yeti_blastn.txt
+      -query ~/MysteriousAbominableYeti/data/Nepal_hair_12s.fa \
+      > ~/MysteriousAbominableYeti/results/BLAST/Yeti_blastn.txt
 
 ''' > ~/MysteriousAbominableYeti/shell/blastn.sh
 
