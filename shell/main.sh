@@ -397,7 +397,6 @@ mkdir ~/MysteriousAbominableYeti/results/BLAST
 
 
 
-
 echo '''
     #!/bin/sh
 
