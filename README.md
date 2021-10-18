@@ -1,7 +1,5 @@
 ## This repository contains a very simple first-step tutorial on how to perform bioinformatic analyses on our phyloserver.
 
-:warning:Be warned, we will dive deep into cryptozoology ;-) :warning:
-
 ### (a) Access via Remote Desktop
 
 On your Windows computer, search for the "Remote Desktop" tool (see below)
@@ -40,13 +38,8 @@ and also for the code syntax field.
 
 #### install Platformio-ide-terminal
 
-As a very first step, we are going to install the ESSENTIAL `Platformio-ide-terminal` pacakge, which adds a fully functioning terminal to your ATOM editor.
-
-Go to your terminal and type
-
-```bash
-apm install plattformio-ide-terminal
-```
+As a very first step, we are going to install the ESSENTIAL `Platformio-ide-terminal` pacakge, which adds a fully functioning terminal to your ATOM editor. On the welcome screen
+alternatively, you can also
 
 ![(IDE-Terminal)](.bckup/Images/Workshop/Atom_Install1.png)
 
@@ -115,5 +108,7 @@ Note that the adress of the server address must contain (1) the username followe
 # copy the file TestFileToMoveAround.txt from the Desktop of the remote machine to the H:\ drive on your Windows machine
 scp <username>@<IP>:~/Desktop/TestFileToMoveAround.txt H:\
 ```
+
+:warning:Be warned, we will dive deep into cryptozoology ;-) :warning:
 
 ## Happy exploring

@@ -55,7 +55,13 @@ cat ~/MysteriousAbominableYeti/data/Mammals_12s.fa ~/MysteriousAbominableYeti/da
 
 mafft
 
-# the repsonse of the shell: "bash: mafft: Befehl nicht gefunden..." indicates that the shell is not able to find the program "mafft". We need to tell shell to load the installation path of mafft into it's environment first. This can be done with the distribution manager conda:
+# the repsonse of the shell: "bash: mafft: Befehl nicht gefunden..." indicates that the shell is not able to find the program "mafft". We need to tell shell to load the installation path of mafft into it's environment first. This can be done with the distribution manager conda.
+
+#However, before you use conda for the first time, you need to initialize your shell for conda first. This can be done by typing
+
+conda init
+
+# now, you need to close the shell and open a new one. Then type
 
 conda activate mafft-7.487
 
