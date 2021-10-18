@@ -263,7 +263,7 @@ echo '''
 
 Rscript ~/MysteriousAbominableYeti/scripts/Yeti_phylogeny.r
 
-# now that we have a faint idea, it is time to do some background research and read some papers: http://previouslife.lanevol.org/LANE/yeti.html
+# now that we have a faint idea that the Yeti sample is not an unkown hominid, it is time to do some background research and read some papers: http://previouslife.lanevol.org/LANE/yeti.html
 
 #### In our second excercise, we will do a local BLAST search to verify our phylogenetic signal.
 
