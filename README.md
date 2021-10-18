@@ -106,6 +106,6 @@ Note that the adress of the server address must contain (1) the username followe
 scp <username>@<IP>:~/Desktop/TestFileToMoveAround.txt H:\
 ```
 
-:warning:Be warned, we will dive deep into cryptozoology ;-) :warning:
+:warning:Be warned, we will now dive deep into cryptozoology ;-) :warning:
 
 ## Happy exploring

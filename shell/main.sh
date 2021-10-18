@@ -147,7 +147,7 @@ Gblocks ~/MysteriousAbominableYeti/results/mafft/Complete_12s_mafft.fa -e=-gb
 
 qsub ~/MysteriousAbominableYeti/shell/gblocks.sh
 
-# Now, we are ready to calculate a maximum likelihood tree using RAxML. This is a three-step process. First, you'll calculate an maximum likelihood tree using the GTR-Gamma substitution model (for the sake of simplicity), then you perform up to 1000 rounds of bootstrapping based on the starting tree. Finally, you'll reconcile the best tree based on bootstrapping. In all cases, we'll use the Platypus as our outgroup. Note, that we set the maximum number of cores to 20 (-t 20) which corresponds to the settings for OpenPBS (#PBS -l select=1:ncpus=20:mem=200gb).
+# Now, we are ready to calculate a maximum likelihood tree using RAxML. This is a three-step process. First, you'll calculate an maximum likelihood tree using the GTR-Gamma substitution model (for the sake of simplicity), then you perform 200 rounds of bootstrapping based on the starting tree. Finally, you'll reconcile the best tree based on bootstrapping. In all cases, we'll use the Platypus as our outgroup. Note, that we set the maximum number of cores to 20 (-t 20) which corresponds to the settings for OpenPBS (#PBS -l select=1:ncpus=20:mem=200gb).
 
 echo '''
 #!/bin/sh
@@ -185,7 +185,7 @@ raxmlHPC-PTHREADS-SSE3 \
 
 raxmlHPC-PTHREADS-SSE3 \
   -m GTRGAMMA \
-  -N autoMRE \
+  -N 200 \
   -p 772374015 \
   -b 444353738 \
   -n bootrep \
