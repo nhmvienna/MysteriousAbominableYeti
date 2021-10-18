@@ -47,11 +47,17 @@ ls -l
 
 # This commands lists the three visible folders "data" and shell and the README.md that you have already seen in the left panel of the ATOM editor.
 
+cd data/
+
+ls -l
+
+# we see two fasta files. One of these contains the sequence of the uknwown "Yeti" sample (Nepal_hair_12s.fa). The other one is a Multifasta with 12s rRNA sequences from a diverse set of mammalian samples.
+
 ## As a first excercise, we will concatenate the multifasta file containing the mammalian samples with the sequence of the unknown hair sample from Nepal which are located in the data/ folder. The UNIX command to combine two or multiple files line by line is called "cat". We use this command to concatenate "Mammals_12s.fasta" and "Nepal_hair_12s.fa". The operator ">" tells "cat" to store the output in a new file called "Complete_12s.fa"
 
 cat ~/MysteriousAbominableYeti/data/Mammals_12s.fa ~/MysteriousAbominableYeti/data/Nepal_hair_12s.fa  > ~/MysteriousAbominableYeti/data/Complete_12s.fa
 
-## 2) In a second step, we will produce a multiple alignment of the 15 samples. We will use the program mafft for this. Let's see if mafft is already available. Type "mafft" in the commandline
+## In a second step, we will produce a multiple alignment of the 15 samples. We will use the program mafft for this. Let's see if mafft is already available. Type "mafft" in the commandline
 
 mafft
 
@@ -65,7 +71,11 @@ conda init
 
 conda activate mafft-7.487
 
-# Note that the commandline now shows in parantheses that the "base" environment has changed to the "mafft-7.487" environment. If you now type "mafft" again, you will see that mafft has been correctly loaded and awaits input. you can kill this process with the shortcut "ctrl"+"c"
+# Note that the commandline now shows in parantheses that the "base" environment has changed to the "mafft-7.487" environment. If you now type "mafft" again,
+
+mafft
+
+# you will see that mafft has been correctly loaded and awaits input. you can kill this process with the shortcut "ctrl"+"c"
 
 # now you COULD start the multiple alignment calculation directly from the commandline using the following command.
 
