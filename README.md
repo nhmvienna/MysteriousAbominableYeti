@@ -18,17 +18,17 @@ To start the Atom Editor, simply type `atom` in the Terminal
 
 and the following window will appear
 
-![RemoteDesktop](.bckup/Images/Workshop/Atom_blank.png)
+![RemoteDesktop](.bckup/Images/Workshop/Atom_WelcomeGuide.png)
 
-There are several options to adjust the appearance of the editor's window. Atom editor is famous for its ability to be tailored to user's requirement. To do that, follow the given steps. Click on the 'Edit' button in the menu bar and navigate to 'preferences'
+as a very first task, you will need to set a password for the keychain.
 
-![(https://linuxhint.com/wp-content/uploads/2020/03/6-42.png)](https://linuxhint.com/wp-content/uploads/2020/03/6-42.png)
+![SetPW](.bckup/Images/Workshop/Atom_setPW.png)
 
-and you will see the following screen
+On the startup screen you will find a Welcome Guide, which is very useful for the initial setup of Atom.
 
-![(https://linuxhint.com/wp-content/uploads/2020/03/7-42.png)](https://linuxhint.com/wp-content/uploads/2020/03/7-42.png)
+For example, there are several options to adjust the appearance of the editor's window. Atom editor is famous for its ability to be tailored to user's requirement. For example, you can easily change the theme of Atom by clicking on the "Theme" button.
 
-There, you can select themes and choose the "light" theme both for the user interface (UI)...
+An new settings tab will appear, where you can select themes and choose the "light" theme both for the user interface (UI)...
 
 ![(themes)](.bckup/Images/Workshop/Atom_Themes.png)
 
@@ -38,14 +38,11 @@ and also for the code syntax field.
 
 #### install Platformio-ide-terminal
 
-As a very first step, we are going to install the ESSENTIAL `Platformio-ide-terminal` pacakge, which adds a fully functioning terminal to your ATOM editor. On the welcome screen
-alternatively, you can also
+As a very first step, we are going to install the ESSENTIAL `Platformio-ide-terminal` pacakge, which adds a fully functioning terminal to your ATOM editor. On the Welcome Guide, which should be still opened, you can find the button "Install a Packages". Press on it and the settings window will appear. There you can type "plattformio-ide-terminal" in the search field and install the corresponding package.
 
-![(IDE-Terminal)](.bckup/Images/Workshop/Atom_Install1.png)
+![(InstallPack)](.bckup/Images/Workshop/Atom_Installpack.png)
 
-The next time you open ATOM, you will find a `+` in the bottom left corner of the window.
-
-Once you click on it, a new terminal window will appear at the bottom of the Atom Window.
+When the installation is completed, you will find a `+` in the bottom left corner of the window. Once you click on it, a new terminal window will appear at the bottom of the Atom Window.
 
 ![(Terminal)](.bckup/Images/Workshop/Atom_terminal.png)
 
