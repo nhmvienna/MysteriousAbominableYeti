@@ -83,7 +83,7 @@ mafft
 
 # HOWEVER, we should develop the habit of using the OpenPBS job scheduler for computationally demanding tasks like multiple alignments, etc. Please read the OpenPBS tutorial at https://github.com/nhmvienna/FirstSteps/blob/main/Bioinformatics/OpenPBS.md carefully for more details.
 
-# In brief, you need to write a short Shellscript that tells OpenPBS what to do and which resources to provide for your task. First, you need to provide the so called SheBang line, which tells where the shell is located: #!/bin/sh, then you can provide the name of the task with #PBS -N <name>, the output for the log files #PBS -o <outputfile> and the resources, for example #PBS -l select=1:ncpus=20:mem=200gb i.e. use a maximum of 20 cores and 200GB of RAM. After that, you need to load the software dependencies (see https://github.com/nhmvienna/FirstSteps/blob/main/Bioinformatics/SoftwareList.md for all installed software). Then finally, you continue with the commands for your analyses. Below, you fins an example of such a shell script to run the mafft command. Note, that the "echo" command prints the content of this shellscript to a new file. Everything between the first and last three single quotes is written to the new file, irrespective of linebreaks in between. You can generate the below shellscript by highlighting the whole code and then execute it with the key combination "ctrl"+"enter"
+# In brief, you need to write a short Shellscript that tells OpenPBS what to do and which resources to provide for your task. First, you need to provide the so called SheBang line, which tells where the shell is located: #!/bin/sh, then you can provide the name of the task with #PBS -N <name>, the output for the log files #PBS -o <outputfile> and the resources, for example #PBS -l select=1:ncpus=20:mem=200gb i.e. use a maximum of 20 cores and 200GB of RAM. After that, you need to load the software dependencies (see https://github.com/nhmvienna/FirstSteps/blob/main/Bioinformatics/SoftwareList.md for all installed software). Then finally, you continue with the commands for your analyses. Below, you find an example of such a shell script to run the mafft command. Note, that the "echo" command prints the content of this shellscript to a new file. Everything between the first and last three single quotes is written to the new file, irrespective of linebreaks in between. You can generate the below shellscript by highlighting the whole code and then execute it with the key combination "ctrl"+"enter"
 
 echo '''
 #!/bin/sh
@@ -236,7 +236,7 @@ echo '''
       theme_tree2()+
       theme_bw()+
       geom_tiplab(size =6,
-            fontface="bold")+
+            fontface="bold+italic")+
       ggplot2::xlim(0, 0.5)+
       xlab("av. subst./site") +
       geom_nodelab(color="red",
