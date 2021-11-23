@@ -1,5 +1,8 @@
 ## This repository contains a very simple first-step tutorial on how to perform bioinformatic analyses on our phyloserver.
 
+-   The slides to this Workshop can be found [here](Workshop_Phyloserver.pdf)
+-   The recordings of the Workshop can be found on the NHM intranet under `I:\Public\mkapun\FrontiersInMolecularSystematics\Workshop_I_Phyloserver`
+
 ### (a) Access via Remote Desktop
 
 On your Windows computer, search for the "Remote Desktop" tool (see below)
