@@ -1,6 +1,6 @@
 ## This repository contains a very simple first-step tutorial on how to perform bioinformatic analyses on our phyloserver.
 
--   The slides to this Workshop can be found [here](https://github.com/nhmvienna/FirstSteps/blob/main/resources/Workshop_Phyloserver2.pdf)
+-   The slides to this Workshop can be found [here](https://github.com/nhmvienna/FirstSteps/blob/main/resources/Workshop_Phyloserver2.pdf) (admission to NHM private repositories necessary)
 -   The recordings of the Workshop can be found on the NHM intranet under `I:\Public\mkapun\FrontiersInMolecularSystematics\Workshop_I_Phyloserver`
 
 ### (a) Access via Remote Desktop
