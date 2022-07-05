@@ -30,7 +30,7 @@
 
 ##### In this excercise, we will reconstruct a phylogeny of 12s rRNA sequences of a diverse set of 14 mammalian samples and include the unknown DNA sample from Nepal. Moreover, we will use a local copy of the NCBI database for a BLAST search.
 
-# In the previous excercise, you have downloaded the Git Repository "MysteriousAbominableYeti" to your home directory. Let's first explore what we can find in this Repository. First make sure that you are in the home directory. Either type "cd" in the terminal window that you have started by clicking the "+" symbol in the bottom left corner of the ATOM editor or move the cursor on line of the command "cd", i.e. line 34 in our case, and press "ctrl"+"enter"
+# In the previous excercise, you have downloaded the Git Repository "Workshop_I_Intro_to_Phyloserver" to your home directory. Let's first explore what we can find in this Repository. First make sure that you are in the home directory. Either type "cd" in the terminal window that you have started by clicking the "+" symbol in the bottom left corner of the ATOM editor or move the cursor on line of the command "cd", i.e. line 34 in our case, and press "ctrl"+"enter"
 
 cd
 
@@ -42,7 +42,7 @@ cd Work
 
 cd Workshop_I_Intro_to_Phyloserver/
 
-# now press "Enter". You will realize that the commandline has changed. The text in the square brackets now ends with "MysteriousAbominableYeti", which indicates that you are within this folder. Explore the content of "MysteriousAbominableYeti" with "ls -l"
+# now press "Enter". You will realize that the commandline has changed. The text in the square brackets now ends with "Workshop_I_Intro_to_Phyloserver", which indicates that you are within this folder. Explore the content of "Workshop_I_Intro_to_Phyloserver" with "ls -l"
 
 ls -l
 
@@ -56,7 +56,7 @@ ls -l
 
 ## As a first excercise, we will concatenate the multifasta file containing the mammalian samples with the sequence of the unknown hair sample from Nepal which are located in the data/ folder. The UNIX command to combine two or multiple files line by line is called "cat". We use this command to concatenate "Mammals_12s.fasta" and "Nepal_hair_12s.fa". The operator ">" tells "cat" to store the output in a new file called "Complete_12s.fa"
 
-cat ~/MysteriousAbominableYeti/data/Mammals_12s.fa ~/MysteriousAbominableYeti/data/Nepal_hair_12s.fa  > ~/MysteriousAbominableYeti/data/Complete_12s.fa
+cat ~/Workshop_I_Intro_to_Phyloserver/data/Mammals_12s.fa ~/Workshop_I_Intro_to_Phyloserver/data/Nepal_hair_12s.fa  > ~/Workshop_I_Intro_to_Phyloserver/data/Complete_12s.fa
 
 ## In a second step, we will produce a multiple alignment of the 15 samples. We will use the program mafft for this. Let's see if mafft is already available. Type "mafft" in the commandline
 
@@ -80,7 +80,7 @@ mafft
 
 # now you COULD start the multiple alignment calculation directly from the commandline using the following command.
 
-# mafft --auto ~/MysteriousAbominableYeti/data/Complete_12s.fa > ~/MysteriousAbominableYeti/results/mafft/Complete_12s_mafft.fa
+# mafft --auto ~/Workshop_I_Intro_to_Phyloserver/data/Complete_12s.fa > ~/Workshop_I_Intro_to_Phyloserver/results/mafft/Complete_12s_mafft.fa
 
 # HOWEVER, we should develop the habit of using the OpenPBS job scheduler for computationally demanding tasks like multiple alignments, etc. Please read the OpenPBS tutorial at https://github.com/nhmvienna/FirstSteps/blob/main/Bioinformatics/OpenPBS.md carefully for more details.
 
@@ -93,7 +93,7 @@ echo '''
 #PBS -N MAFFT_Yeti
 
 ## Redirect output stream to this file.
-#PBS -o ~/MysteriousAbominableYeti/results/mafft/log.txt
+#PBS -o ~/Workshop_I_Intro_to_Phyloserver/results/mafft/log.txt
 
 ## Stream Standard Output AND Standard Error to outputfile (see above)
 #PBS -j oe
@@ -110,20 +110,20 @@ conda activate mafft-7.487
 ######## run analyses #######
 
 # now make a mafft output directory in the results folder
-mkdir -p ~/MysteriousAbominableYeti/results/mafft
+mkdir -p ~/Workshop_I_Intro_to_Phyloserver/results/mafft
 
 # now run mafft
-mafft --auto ~/MysteriousAbominableYeti/data/Complete_12s.fa \
-> ~/MysteriousAbominableYeti/results/mafft/Complete_12s_mafft.fa
-''' > ~/MysteriousAbominableYeti/shell/mafft.sh
+mafft --auto ~/Workshop_I_Intro_to_Phyloserver/data/Complete_12s.fa \
+> ~/Workshop_I_Intro_to_Phyloserver/results/mafft/Complete_12s_mafft.fa
+''' > ~/Workshop_I_Intro_to_Phyloserver/shell/mafft.sh
 
 # Now, you can submit this Shellscript to OpenPBS using the "qsub" command.
 
-qsub ~/MysteriousAbominableYeti/shell/mafft.sh
+qsub ~/Workshop_I_Intro_to_Phyloserver/shell/mafft.sh
 
 # if everthing worked as expected, you should see a new folder "results" which contains a subfolder "mafft". In there, you will find the alignment in fasta format. You can preview the file with the less command.
 
-less ~/MysteriousAbominableYeti/results/mafft/Complete_12s_mafft.fa
+less ~/Workshop_I_Intro_to_Phyloserver/results/mafft/Complete_12s_mafft.fa
 
 # you can navigate through the file using the up- and down arrow keys and exit by typing "q". You'll notice that the samples have different length which results in multiple gaps at the beginning and the end of the alignment in samples which shorter sequences.
 
@@ -136,7 +136,7 @@ echo '''
 #PBS -N GBlocks_Yeti
 
 ## Redirect output stream to this file.
-#PBS -o ~/MysteriousAbominableYeti/results/mafft/log2.txt
+#PBS -o ~/Workshop_I_Intro_to_Phyloserver/results/mafft/log2.txt
 
 ## Stream Standard Output AND Standard Error to outputfile (see above)
 #PBS -j oe
@@ -152,11 +152,11 @@ module load Alignment/Gblocks-0.91b
 ######## run analyses #######
 
 ## now run Gblocks
-Gblocks ~/MysteriousAbominableYeti/results/mafft/Complete_12s_mafft.fa -e=-gb
+Gblocks ~/Workshop_I_Intro_to_Phyloserver/results/mafft/Complete_12s_mafft.fa -e=-gb
 
-''' > ~/MysteriousAbominableYeti/shell/gblocks.sh
+''' > ~/Workshop_I_Intro_to_Phyloserver/shell/gblocks.sh
 
-qsub ~/MysteriousAbominableYeti/shell/gblocks.sh
+qsub ~/Workshop_I_Intro_to_Phyloserver/shell/gblocks.sh
 
 # Now, we are ready to calculate a maximum likelihood tree using RAxML. This is a three-step process. First, you'll calculate an maximum likelihood tree using the GTR-Gamma substitution model (for the sake of simplicity), then you perform 200 rounds of bootstrapping based on the starting tree. Finally, you'll reconcile the best tree based on bootstrapping. In all cases, we'll use the Platypus as our outgroup. Note, that we set the maximum number of cores to 20 (-t 20) which corresponds to the settings for OpenPBS (#PBS -l select=1:ncpus=20:mem=200gb).
 
@@ -167,7 +167,7 @@ echo '''
 #PBS -N RAxML_Yeti
 
 ## Redirect output stream to this file.
-#PBS -o ~/MysteriousAbominableYeti/results/RAxML/log.txt
+#PBS -o ~/Workshop_I_Intro_to_Phyloserver/results/RAxML/log.txt
 
 ## Stream Standard Output AND Standard Error to outputfile (see above)
 #PBS -j oe
@@ -181,8 +181,8 @@ module load Phylogeny/RAxML-2.8.10
 
 ######## run analyses #######
 
-mkdir -p ~/MysteriousAbominableYeti/results/RAxML
-cd ~/MysteriousAbominableYeti/results/RAxML
+mkdir -p ~/Workshop_I_Intro_to_Phyloserver/results/RAxML
+cd ~/Workshop_I_Intro_to_Phyloserver/results/RAxML
 
 # Now, run raxml against the aligned and trimmed FASTA file generated by mafft and gblocks
 raxmlHPC-PTHREADS-SSE3 \
@@ -190,7 +190,7 @@ raxmlHPC-PTHREADS-SSE3 \
   -N 20 \
   -p 772374015 \
   -n BEST \
-  -s ~/MysteriousAbominableYeti/results/mafft/Complete_12s_mafft.fa-gb \
+  -s ~/Workshop_I_Intro_to_Phyloserver/results/mafft/Complete_12s_mafft.fa-gb \
   -o Ornithorhynchus_anatinus \
   -T 20
 
@@ -200,7 +200,7 @@ raxmlHPC-PTHREADS-SSE3 \
   -p 772374015 \
   -b 444353738 \
   -n bootrep \
-  -s ~/MysteriousAbominableYeti/results/mafft/Complete_12s_mafft.fa-gb \
+  -s ~/Workshop_I_Intro_to_Phyloserver/results/mafft/Complete_12s_mafft.fa-gb \
   -o Ornithorhynchus_anatinus \
   -T 20
 
@@ -211,9 +211,9 @@ raxmlHPC-SSE3 -f b \
   -z RAxML_bootstrap.bootrep \
   -n Yeti_phylogeny -o Ornithorhynchus_anatinus
 
-''' > ~/MysteriousAbominableYeti/shell/raxml.sh
+''' > ~/Workshop_I_Intro_to_Phyloserver/shell/raxml.sh
 
-qsub ~/MysteriousAbominableYeti/shell/raxml.sh
+qsub ~/Workshop_I_Intro_to_Phyloserver/shell/raxml.sh
 
 # Now you can check the status of the running job by typing
 
@@ -223,15 +223,15 @@ qstat -awt
 
 # Regularly check the status of your job. In the terminal window, you can use the up- and down arrows to go back to your previously used commands. Once your job is no longer listed, it is done and you can proceed (this should take app. 10 min).
 
-# Now, we have generated a tree in NEWICK format with bootstrap values (~/MysteriousAbominableYeti/results/RAxML/RAxML_bipartitions.Yeti_phylogeny), which we can plot in R. I have written the following script, which can be used to plot the tree using the ggtree package. First make a new directory called "scripts", where we will store this R script.
+# Now, we have generated a tree in NEWICK format with bootstrap values (~/Workshop_I_Intro_to_Phyloserver/results/RAxML/RAxML_bipartitions.Yeti_phylogeny), which we can plot in R. I have written the following script, which can be used to plot the tree using the ggtree package. First make a new directory called "scripts", where we will store this R script.
 
-mkdir ~/MysteriousAbominableYeti/scripts
+mkdir ~/Workshop_I_Intro_to_Phyloserver/scripts
 
 echo '''
     library("ggtree")
     library("ggplot2")
 
-    Mammals<-read.tree("~/MysteriousAbominableYeti/results/RAxML/RAxML_bipartitions.Yeti_phylogeny")
+    Mammals<-read.tree("~/Workshop_I_Intro_to_Phyloserver/results/RAxML/RAxML_bipartitions.Yeti_phylogeny")
 
     Mammals.tree <- ggtree(Mammals)+
       theme_tree2()+
@@ -250,19 +250,19 @@ echo '''
             axis.text=element_text(size=18),
             strip.text =element_text(size=20))
 
-    ggsave(filename="~/MysteriousAbominableYeti/results/Yeti_phylogeny.pdf",
+    ggsave(filename="~/Workshop_I_Intro_to_Phyloserver/results/Yeti_phylogeny.pdf",
             Mammals.tree ,
             width=12,
             height=8)
-    ggsave(filename="~/MysteriousAbominableYeti/results/Yeti_phylogeny.png",
+    ggsave(filename="~/Workshop_I_Intro_to_Phyloserver/results/Yeti_phylogeny.png",
             Mammals.tree ,
             width=12,
             height=8)
-''' > ~/MysteriousAbominableYeti/scripts/Yeti_phylogeny.r
+''' > ~/Workshop_I_Intro_to_Phyloserver/scripts/Yeti_phylogeny.r
 
 # Now we can finally execute the R script using the Rscript command.
 
-Rscript ~/MysteriousAbominableYeti/scripts/Yeti_phylogeny.r
+Rscript ~/Workshop_I_Intro_to_Phyloserver/scripts/Yeti_phylogeny.r
 
 # now that we have a faint idea that the Yeti sample is not an unkown hominid, it is time to do some background research and read some papers: http://previouslife.lanevol.org/LANE/yeti.html
 
@@ -270,7 +270,7 @@ Rscript ~/MysteriousAbominableYeti/scripts/Yeti_phylogeny.r
 
 # let's make a new subfolder in "results"
 
-mkdir ~/MysteriousAbominableYeti/results/BLAST
+mkdir ~/Workshop_I_Intro_to_Phyloserver/results/BLAST
 
 # now, we need to make a new Shellscript for OpenPBS. Do you already manage to create one on your own? Use the text parts from above as a template. Check out https://github.com/nhmvienna/FirstSteps/blob/main/Bioinformatics/SoftwareList.md for the code to activate BLAST in your shell script. Below is a command for a blastn search against the local copy of the nt database at /media/scratch/NCBI_nt_DB_210714/, which will only retain hits with an e-value <= 1e-100 and print out the results in tabular format. If you do not manage, you can find the solution in line 400 :-)
 
@@ -279,8 +279,8 @@ mkdir ~/MysteriousAbominableYeti/results/BLAST
   # -evalue 1e-100 \
   # -outfmt "6 qseqid sseqid sscinames slen qlen pident length mismatch gapopen qstart qend sstart send evalue bitscore" \
   # -db /media/scratch/NCBI_nt_DB_210714/nt \
-  # -query ~/MysteriousAbominableYeti/data/Nepal_hair_12s.fa \
-  # > ~/MysteriousAbominableYeti/results/BLAST/Yeti_blastn.txt
+  # -query ~/Workshop_I_Intro_to_Phyloserver/data/Nepal_hair_12s.fa \
+  # > ~/Workshop_I_Intro_to_Phyloserver/results/BLAST/Yeti_blastn.txt
 
 
 
@@ -421,7 +421,7 @@ echo '''
     #PBS -N BLASTN_Yeti
 
     ## Redirect output stream to this file.
-    #PBS -o ~/MysteriousAbominableYeti/results/BLAST/log2.txt
+    #PBS -o ~/Workshop_I_Intro_to_Phyloserver/results/BLAST/log2.txt
 
     ## Stream Standard Output AND Standard Error to outputfile (see above)
     #PBS -j oe
@@ -440,9 +440,9 @@ echo '''
       -evalue 1e-100 \
       -outfmt "6 qseqid sseqid sscinames slen qlen pident length mismatch gapopen qstart qend sstart send evalue bitscore" \
       -db /media/scratch/NCBI_nt_DB_210714/nt \
-      -query ~/MysteriousAbominableYeti/data/Nepal_hair_12s.fa \
-      > ~/MysteriousAbominableYeti/results/BLAST/Yeti_blastn.txt
+      -query ~/Workshop_I_Intro_to_Phyloserver/data/Nepal_hair_12s.fa \
+      > ~/Workshop_I_Intro_to_Phyloserver/results/BLAST/Yeti_blastn.txt
 
-''' > ~/MysteriousAbominableYeti/shell/blastn.sh
+''' > ~/Workshop_I_Intro_to_Phyloserver/shell/blastn.sh
 
-qsub ~/MysteriousAbominableYeti/shell/blastn.sh
+qsub ~/Workshop_I_Intro_to_Phyloserver/shell/blastn.sh
