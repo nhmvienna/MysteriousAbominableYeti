@@ -27,6 +27,7 @@
 # MMMMMMMMMWKkdoooolcllc;;clloolllccl:c0MMMMMMMMMMMM
 # MMMMMMMMMMMMMMWWNKXWMXkoc;;,'',,;clxXWWMMMMMMMMMMM
 
+
 ##### In this excercise, we will reconstruct a phylogeny of 12s rRNA sequences of a diverse set of 14 mammalian samples and include the unknown DNA sample from Nepal. Moreover, we will use a local copy of the NCBI database for a BLAST search.
 
 # In the previous excercise, you have downloaded the Git Repository "MysteriousAbominableYeti" to your home directory. Let's first explore what we can find in this Repository. First make sure that you are in the home directory. Either type "cd" in the terminal window that you have started by clicking the "+" symbol in the bottom left corner of the ATOM editor or move the cursor on line of the command "cd", i.e. line 34 in our case, and press "ctrl"+"enter"
@@ -35,11 +36,11 @@ cd
 
 # with the command "cd" you can change between directories. You are now in your home directory, Let's explore the new Repository that you just downloaded. Remember, you can use the Tab key to autocomplete file and foldernames in UNIX. Type the following (truncated) command in the terminal window and press the tab key. What happens?
 
-cd Mys
+cd Work
 
 # this should be autocompleted to
 
-cd MysteriousAbominableYeti/
+cd Workshop_I_Intro_to_Phyloserver/
 
 # now press "Enter". You will realize that the commandline has changed. The text in the square brackets now ends with "MysteriousAbominableYeti", which indicates that you are within this folder. Explore the content of "MysteriousAbominableYeti" with "ls -l"
 
