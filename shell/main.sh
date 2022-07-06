@@ -112,7 +112,7 @@ conda activate mafft-7.487
 # now make a mafft output directory in the results folder
 mkdir -p ~/Workshop_I_Intro_to_Phyloserver/results/mafft
 
-# now run mafft
+# # now run mafft
 mafft --auto ~/Workshop_I_Intro_to_Phyloserver/data/Complete_12s.fa \
 > ~/Workshop_I_Intro_to_Phyloserver/results/mafft/Complete_12s_mafft.fa
 ''' > ~/Workshop_I_Intro_to_Phyloserver/shell/mafft.sh
