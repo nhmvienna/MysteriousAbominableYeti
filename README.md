@@ -1,7 +1,7 @@
 # This repository contains a very simple first-step tutorial on how to perform bioinformatic analyses on our phyloserver.
 
 -   The slides to this Workshop can be found [here](https://github.com/nhmvienna/FirstSteps/blob/main/resources/Workshop_Phyloserver2.pdf) (admission to NHM private repositories necessary)
--   The recordings of the Workshop can be found on the NHM intranet under `I:\Public\mkapun\FrontiersInMolecularSystematics\Workshop_I_Phyloserver`
+-   The recordings of the Workshop can be found on the NHM intranet under `I:/Public/mkapun/FrontiersInMolecularSystematics/Workshop_I_Phyloserver`
 
 ### (a) Access via Remote Desktop
 
@@ -25,66 +25,44 @@ and the following window will appear
 
 On the startup screen you will find a Welcome Guide, which is very useful for the initial setup of VSCode.
 
-For example, there are several options to adjust the appearance of the editor's window. VSCode editor is famous for its ability to be tailored to user's requirement. For example, you can easily change the theme of VSCode by clicking on the "Theme" button.
+For example, there are several options to adjust the appearance of the editor's window. VSCode editor is famous for its ability to be tailored to user's requirement. For example, you can easily change the theme of VSCode by choosing `File -> Preferences -> Settings`, or more simply, by clicking `Ctrl+,`.
 
-An new settings tab will appear, where you can select themes and choose the "light" theme both for the user interface (UI)...
+![(themes)](.bckup/Images/VSCode/VSC_theme.png)
+### Set up shortcut to automatically copy and excecute code from a text file in the terminal using the combination of the keys `'ctrl'+'enter'`
 
-![(themes)](.bckup/Images/Workshop/VSCode_Themes.png)
+You need to open the Keymap file by clicking ``Ctrl+Shift+p``. Then type "Key" and choose "Preferences: Open Keyboard Shortcuts"
 
-and also for the code syntax field.
+![(keymap)](.bckup/Images/VSCode/Shortcuts.png)
 
-![(syntax)](.bckup/Images/Workshop/VSCode_SyntaxThemes.png)
+In the new window, type "runse" and choose "Terminal: Run Selected Text in Active Terminal". If no keybinding exist you, can click in the empty field left to the Commnad column and a new window will appear, where you can use your desired Keycombination to execute. I use, for example "Ctrl+Enter".
 
-#### install Platformio-ide-terminal
-
-As a very first step, we are going to install the ESSENTIAL `Platformio-ide-terminal` pacakge, which adds a fully functioning terminal to your VSCode editor. On the Welcome Guide, which should be still opened, you can find the button "Install a Packages". Press on it and the settings window will appear. There you can type "plattformio-ide-terminal" in the search field and install the corresponding package.
-
-![(InstallPack)](.bckup/Images/Workshop/VSCode_Installpack.png)
-
-When the installation is completed, you will find a `+` in the bottom left corner of the window. Once you click on it, a new terminal window will appear at the bottom of the VSCode Window.
-
-![(Terminal)](.bckup/Images/Workshop/VSCode_terminal.png)
-
-While this is already cool, you can set a shortcut to automatically copy and excecute code from a text file in the terminal using the combination of the keys `'ctrl'+'enter'`
-
-You need to open the Keymap file by clicking 'Edit' and choosing Keymap...
-
-![(keymap)](.bckup/Images/Workshop/VSCode_keymap.png)
-
-In the keymap.cson file, you need to add the following lines and save the file.
-
-```bash
-'VSCode-text-editor':
-  'ctrl-enter': 'platformio-ide-terminal:insert-selected-text'
-```
-
-![(keymap)](.bckup/Images/Workshop/VSCode_keymap_terminal.png)
-
-Then you need to restart VSCode so that the shortcut becomes available. Now that we have a fully functioning text editor, it is time to start some real analyses
+![(keymap)](.bckup/Images/VSCode/RunSel.png)
 
 ### (c) clone this GitHub repository
 
-In your VSCode editor, open a new terminal window by clicking the `+` in the bottom left corner and type the following
+In your VSCode editor, open a new terminal window by the "Terminal"  tab in the menu bar at the top. 
+
+![(keymap)](.bckup/Images/VSCode/NewTerminal.png)
+
+and paste the below code in the terminal window
 
 ```bash
 cd
 
-git clone https://github.com/nhmvienna/MysteriousAbominableYeti
+git clone https://github.com/nhmvienna/Workshop_I_Intro_to_Phyloserver
 ```
 
-Now, you have imported all data from the 'MysteriousAbominableYeti' repository to your home directory.
+Now, you have imported all data from the 'Workshop_I_Intro_to_Phyloserver' repository to your home directory.
 
 ### (d) Select project folders
 
-By clicking `File > Add Project folder...` or by using the shortcut **'Ctrl'+'Shift'+'A'** you can now select the newly downloaded folder "MysteriousAbominableYeti" as your project folder.
+By clicking `File > Add Project folder...`  you can now select the newly downloaded folder "Workshop_I_Intro_to_Phyloserver" from your home directory as your project folder.
 
-![(PF1)](.bckup/Images/Workshop/VSCode_ProjectFolder.png)
-
-![(PF2)](.bckup/Images/Workshop/VSCode_ProjectFolder2.png)
+![(PF1)](.bckup/Images/VSCode/ProjectFolder1.png)
 
 Once the Project folder is loaded, it will appear in the left pane of the window.
 
-![(PF3)](.bckup/Images/Workshop/VSCode_ProjectFolder3.png)
+![(PF3)](.bckup/Images/VSCode/Sidebar.png)
 
 ### (e) Start the bioinformatic analyses
 
@@ -101,8 +79,8 @@ If you want to migrate files from your personal computer to the server, you can 
 Note that the adress of the server address must contain (1) the username followed by an `@` symbol, (2) the name or IP address of the remote machine, followed by a colon `:` and (3) the full path to the file that should be copied.
 
 ```bash
-# copy the file TestFileToMoveAround.txt from the Desktop of the remote machine to the H:\ drive on your Windows machine
-scp <username>@<IP>:~/Desktop/TestFileToMoveAround.txt H:\
+# copy the file TestFileToMoveAround.txt from the Desktop of the remote machine to the H:/ drive on your Windows machine
+scp <username>@<IP>:~/Desktop/TestFileToMoveAround.txt H:/
 ```
 
 :warning:Be warned, we will now dive deep into cryptozoology ;-) :warning:
