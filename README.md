@@ -68,9 +68,9 @@ Once the Project folder is loaded, it will appear in the left pane of the window
 
 In VSCode, open the document 'main.sh' located in the folder shell/ and follow the instructions.
 
-You may need to adjust the wrapping of the text to improve the readibility. This can be done as follows
+You may need to adjust the wrapping of the text to improve the readibility. This can be done by clicking `View -> Word Wrap` in the menu bar
 
-![(PF3)](.bckup/Images/Workshop/VSCode_Softwrap.png)
+![(PF3)](.bckup\Images\VSCode\WordWrap.png)
 
 ### (f) Moving files from the server to your Windows computer
 
@@ -82,6 +82,8 @@ Note that the adress of the server address must contain (1) the username followe
 # copy the file TestFileToMoveAround.txt from the Desktop of the remote machine to the H:/ drive on your Windows machine
 scp <username>@<IP>:~/Desktop/TestFileToMoveAround.txt H:/
 ```
+
+Alternatively you can also use [WinSCP](https://github.com/nhmvienna/FirstSteps/blob/main/Bioinformatics/Phyloserver.md#2-via-winscp)
 
 :warning:Be warned, we will now dive deep into cryptozoology ;-) :warning:
 
