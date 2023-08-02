@@ -70,7 +70,7 @@ In VSCode, open the document 'main.sh' located in the folder shell/ and follow t
 
 You may need to adjust the wrapping of the text to improve the readibility. This can be done by clicking `View -> Word Wrap` in the menu bar
 
-![(PF3)](.bckup\Images\VSCode\WordWrap.png)
+![(PF3)](.bckup/Images/VSCode/WordWrap.png)
 
 ### (f) Moving files from the server to your Windows computer
 
