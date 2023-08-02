@@ -13,62 +13,58 @@ enter the IP address for the phyloserver and use the username and password provi
 
 ![AlmaLinuxTerminal](.bckup/Images/AlmaLinuxTerminal.png)
 
-### (b) set up ATOM Text Editor
+### (b) set up VSCode Text Editor
 
-To start the Atom Editor, simply type `atom` in the Terminal
+To start the VSCode Editor, simply type `code` in the Terminal
 
-![RemoteDesktop](.bckup/Images/Workshop/Atom.png)
+![RemoteDesktop](.bckup/Images/VSCode/code.png)
 
 and the following window will appear
 
-![RemoteDesktop](.bckup/Images/Workshop/Atom_WelcomeGuide.png)
+![RemoteDesktop](.bckup/Images/VSCode/VSC_start.png)
 
-as a very first task, you will need to set a password for the keychain.
+On the startup screen you will find a Welcome Guide, which is very useful for the initial setup of VSCode.
 
-![SetPW](.bckup/Images/Workshop/Atom_setPW.png)
-
-On the startup screen you will find a Welcome Guide, which is very useful for the initial setup of Atom.
-
-For example, there are several options to adjust the appearance of the editor's window. Atom editor is famous for its ability to be tailored to user's requirement. For example, you can easily change the theme of Atom by clicking on the "Theme" button.
+For example, there are several options to adjust the appearance of the editor's window. VSCode editor is famous for its ability to be tailored to user's requirement. For example, you can easily change the theme of VSCode by clicking on the "Theme" button.
 
 An new settings tab will appear, where you can select themes and choose the "light" theme both for the user interface (UI)...
 
-![(themes)](.bckup/Images/Workshop/Atom_Themes.png)
+![(themes)](.bckup/Images/Workshop/VSCode_Themes.png)
 
 and also for the code syntax field.
 
-![(syntax)](.bckup/Images/Workshop/Atom_SyntaxThemes.png)
+![(syntax)](.bckup/Images/Workshop/VSCode_SyntaxThemes.png)
 
 #### install Platformio-ide-terminal
 
-As a very first step, we are going to install the ESSENTIAL `Platformio-ide-terminal` pacakge, which adds a fully functioning terminal to your ATOM editor. On the Welcome Guide, which should be still opened, you can find the button "Install a Packages". Press on it and the settings window will appear. There you can type "plattformio-ide-terminal" in the search field and install the corresponding package.
+As a very first step, we are going to install the ESSENTIAL `Platformio-ide-terminal` pacakge, which adds a fully functioning terminal to your VSCode editor. On the Welcome Guide, which should be still opened, you can find the button "Install a Packages". Press on it and the settings window will appear. There you can type "plattformio-ide-terminal" in the search field and install the corresponding package.
 
-![(InstallPack)](.bckup/Images/Workshop/Atom_Installpack.png)
+![(InstallPack)](.bckup/Images/Workshop/VSCode_Installpack.png)
 
-When the installation is completed, you will find a `+` in the bottom left corner of the window. Once you click on it, a new terminal window will appear at the bottom of the Atom Window.
+When the installation is completed, you will find a `+` in the bottom left corner of the window. Once you click on it, a new terminal window will appear at the bottom of the VSCode Window.
 
-![(Terminal)](.bckup/Images/Workshop/Atom_terminal.png)
+![(Terminal)](.bckup/Images/Workshop/VSCode_terminal.png)
 
 While this is already cool, you can set a shortcut to automatically copy and excecute code from a text file in the terminal using the combination of the keys `'ctrl'+'enter'`
 
 You need to open the Keymap file by clicking 'Edit' and choosing Keymap...
 
-![(keymap)](.bckup/Images/Workshop/Atom_keymap.png)
+![(keymap)](.bckup/Images/Workshop/VSCode_keymap.png)
 
 In the keymap.cson file, you need to add the following lines and save the file.
 
 ```bash
-'atom-text-editor':
+'VSCode-text-editor':
   'ctrl-enter': 'platformio-ide-terminal:insert-selected-text'
 ```
 
-![(keymap)](.bckup/Images/Workshop/Atom_keymap_terminal.png)
+![(keymap)](.bckup/Images/Workshop/VSCode_keymap_terminal.png)
 
-Then you need to restart Atom so that the shortcut becomes available. Now that we have a fully functioning text editor, it is time to start some real analyses
+Then you need to restart VSCode so that the shortcut becomes available. Now that we have a fully functioning text editor, it is time to start some real analyses
 
 ### (c) clone this GitHub repository
 
-In your Atom editor, open a new terminal window by clicking the `+` in the bottom left corner and type the following
+In your VSCode editor, open a new terminal window by clicking the `+` in the bottom left corner and type the following
 
 ```bash
 cd
@@ -82,21 +78,21 @@ Now, you have imported all data from the 'MysteriousAbominableYeti' repository t
 
 By clicking `File > Add Project folder...` or by using the shortcut **'Ctrl'+'Shift'+'A'** you can now select the newly downloaded folder "MysteriousAbominableYeti" as your project folder.
 
-![(PF1)](.bckup/Images/Workshop/Atom_ProjectFolder.png)
+![(PF1)](.bckup/Images/Workshop/VSCode_ProjectFolder.png)
 
-![(PF2)](.bckup/Images/Workshop/Atom_ProjectFolder2.png)
+![(PF2)](.bckup/Images/Workshop/VSCode_ProjectFolder2.png)
 
 Once the Project folder is loaded, it will appear in the left pane of the window.
 
-![(PF3)](.bckup/Images/Workshop/Atom_ProjectFolder3.png)
+![(PF3)](.bckup/Images/Workshop/VSCode_ProjectFolder3.png)
 
 ### (e) Start the bioinformatic analyses
 
-In Atom, open the document 'main.sh' located in the folder shell/ and follow the instructions.
+In VSCode, open the document 'main.sh' located in the folder shell/ and follow the instructions.
 
 You may need to adjust the wrapping of the text to improve the readibility. This can be done as follows
 
-![(PF3)](.bckup/Images/Workshop/Atom_Softwrap.png)
+![(PF3)](.bckup/Images/Workshop/VSCode_Softwrap.png)
 
 ### (f) Moving files from the server to your Windows computer
 
