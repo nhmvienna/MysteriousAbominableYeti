@@ -144,7 +144,7 @@ In the sidebar, you will see that the new file appears, now you need to add a me
 
 Now press the "Sync Changes" button submit the changes to GitHub.
 
-:caution: If the Repository is actively maintained by many people, make sure to update the local copy of your repository by pressing the ![(Github)](.bckup/Images/VSCode/syncButton.png) symbol before making any changes. Otherwise, you will run into version conflicts, which might be tricky to resolve. :caution:
+> :warning: If the Repository is actively maintained by many people, make sure to update the local copy of your repository by pressing the ![(Github)](.bckup/Images/VSCode/syncButton.png) symbol before making any changes. Otherwise, you will run into version conflicts, which might be tricky to resolve. :warning:
 
 ### (f) Moving files from the server to your Windows computer
 
