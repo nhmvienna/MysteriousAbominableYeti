@@ -1,4 +1,3 @@
-
 ####################### Phyloserver Turtorial ############################
 
 # MMMMMMMMMMMMMMMMMMMMWX0kocldkxooookNMMMMMMMMMMMMMM
@@ -26,7 +25,6 @@
 # MMMMMMMW0o::cldkkxc,,cokKNX0OO0klcoclKMMMMMMMMMMMM
 # MMMMMMMMMWKkdoooolcllc;;clloolllccl:c0MMMMMMMMMMMM
 # MMMMMMMMMMMMMMWWNKXWMXkoc;;,'',,;clxXWWMMMMMMMMMMM
-
 
 ##### In this excercise, we will reconstruct a phylogeny of 12s rRNA sequences of a diverse set of 14 mammalian samples and include the unknown DNA sample from Nepal. Moreover, we will use a local copy of the NCBI database for a BLAST search.
 
@@ -56,7 +54,7 @@ ls -l
 
 ## As a first excercise, we will concatenate the multifasta file containing the mammalian samples with the sequence of the unknown hair sample from Nepal which are located in the data/ folder. The UNIX command to combine two or multiple files line by line is called "cat". We use this command to concatenate "Mammals_12s.fasta" and "Nepal_hair_12s.fa". The operator ">" tells "cat" to store the output in a new file called "Complete_12s.fa"
 
-cat ~/Workshop_I_Intro_to_Phyloserver/data/Mammals_12s.fa ~/Workshop_I_Intro_to_Phyloserver/data/Nepal_hair_12s.fa  > ~/Workshop_I_Intro_to_Phyloserver/data/Complete_12s.fa
+cat ~/Workshop_I_Intro_to_Phyloserver/data/Mammals_12s.fa ~/Workshop_I_Intro_to_Phyloserver/data/Nepal_hair_12s.fa >~/Workshop_I_Intro_to_Phyloserver/data/Complete_12s.fa
 
 ## In a second step, we will produce a multiple alignment of the 15 samples. We will use the program mafft for this. Let's see if mafft is already available. Type "mafft" in the commandline
 
@@ -115,7 +113,7 @@ mkdir -p ~/Workshop_I_Intro_to_Phyloserver/results/mafft
 # # now run mafft
 mafft --auto ~/Workshop_I_Intro_to_Phyloserver/data/Complete_12s.fa \
 > ~/Workshop_I_Intro_to_Phyloserver/results/mafft/Complete_12s_mafft.fa
-''' > ~/Workshop_I_Intro_to_Phyloserver/shell/mafft.sh
+''' >~/Workshop_I_Intro_to_Phyloserver/shell/mafft.sh
 
 # Now, you can submit this Shellscript to OpenPBS using the "qsub" command.
 
@@ -154,7 +152,7 @@ module load Alignment/Gblocks-0.91b
 ## now run Gblocks
 Gblocks ~/Workshop_I_Intro_to_Phyloserver/results/mafft/Complete_12s_mafft.fa -e=-gb
 
-''' > ~/Workshop_I_Intro_to_Phyloserver/shell/gblocks.sh
+''' >~/Workshop_I_Intro_to_Phyloserver/shell/gblocks.sh
 
 qsub ~/Workshop_I_Intro_to_Phyloserver/shell/gblocks.sh
 
@@ -211,7 +209,7 @@ raxmlHPC-SSE3 -f b \
   -z RAxML_bootstrap.bootrep \
   -n Yeti_phylogeny -o Ornithorhynchus_anatinus
 
-''' > ~/Workshop_I_Intro_to_Phyloserver/shell/raxml.sh
+''' >~/Workshop_I_Intro_to_Phyloserver/shell/raxml.sh
 
 qsub ~/Workshop_I_Intro_to_Phyloserver/shell/raxml.sh
 
@@ -237,7 +235,7 @@ echo '''
       theme_tree2()+
       theme_bw()+
       geom_tiplab(size =6,
-            fontface="bold+italic")+
+            fontface="italic")+
       ggplot2::xlim(0, 0.5)+
       xlab("av. subst./site") +
       geom_nodelab(color="red",
@@ -258,7 +256,7 @@ echo '''
             Mammals.tree ,
             width=12,
             height=8)
-''' > ~/Workshop_I_Intro_to_Phyloserver/scripts/Yeti_phylogeny.r
+''' >~/Workshop_I_Intro_to_Phyloserver/scripts/Yeti_phylogeny.r
 
 # Now we can finally execute the R script using the Rscript command.
 
@@ -275,145 +273,284 @@ mkdir ~/Workshop_I_Intro_to_Phyloserver/results/BLAST
 # now, we need to make a new Shellscript for OpenPBS. Do you already manage to create one on your own? Use the text parts from above as a template. Check out https://github.com/nhmvienna/FirstSteps/blob/main/Bioinformatics/SoftwareList.md for the code to activate BLAST in your shell script. Below is a command for a blastn search against the local copy of the nt database at /media/scratch/NCBI_nt_DB_210714/, which will only retain hits with an e-value <= 1e-100 and print out the results in tabular format. If you do not manage, you can find the solution in line 400 :-)
 
 # blastn \
-  # -num_threads 20 \
-  # -evalue 1e-100 \
-  # -outfmt "6 qseqid sseqid sscinames slen qlen pident length mismatch gapopen qstart qend sstart send evalue bitscore" \
-  # -db /media/scratch/NCBI_nt_DB_210714/nt \
-  # -query ~/Workshop_I_Intro_to_Phyloserver/data/Nepal_hair_12s.fa \
-  # > ~/Workshop_I_Intro_to_Phyloserver/results/BLAST/Yeti_blastn.txt
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+# -num_threads 20 \
+# -evalue 1e-100 \
+# -outfmt "6 qseqid sseqid sscinames slen qlen pident length mismatch gapopen qstart qend sstart send evalue bitscore" \
+# -db /media/scratch/NCBI_nt_DB_210714/nt \
+# -query ~/Workshop_I_Intro_to_Phyloserver/data/Nepal_hair_12s.fa \
+# > ~/Workshop_I_Intro_to_Phyloserver/results/BLAST/Yeti_blastn.txt
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
 echo '''
     #!/bin/sh
 
@@ -443,6 +580,6 @@ echo '''
       -query ~/Workshop_I_Intro_to_Phyloserver/data/Nepal_hair_12s.fa \
       > ~/Workshop_I_Intro_to_Phyloserver/results/BLAST/Yeti_blastn.txt
 
-''' > ~/Workshop_I_Intro_to_Phyloserver/shell/blastn.sh
+''' >~/Workshop_I_Intro_to_Phyloserver/shell/blastn.sh
 
 qsub ~/Workshop_I_Intro_to_Phyloserver/shell/blastn.sh
